@@ -1,0 +1,15 @@
+{
+  "name": "cs546finalproject",
+  "version": "1.0.0",
+  "description": "CS 546 Final Project - Electronics E-commerce Website (Group: Batman's Falsy Villians)",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "authors": "Vishwajeet Kakde, Rafael Nunez, Karan Shah, Zhiqi Xiong",
+  "license": "ISC",
+  "dependencies": {
+    
+  }
+}
