@@ -1,8 +1,3 @@
-const express = require("express")
-const router = express.Router()
-const passport = require("passport")
-const LocalStrategy = require("passport-local").Strategy
-
 //index
 router.get("/", function (req, res) {
   res.render("index")
@@ -22,7 +17,4 @@ router.get("/login", function (req, res) {
 
 
 // router.get("/:userId")
-  // End Users
-
-
-module.exports = router
+// End Users

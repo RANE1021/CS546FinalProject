@@ -7,15 +7,17 @@ const validator = require("express-validator")
 const flash = require("connect-flash")
 const session = require("express-session")
 const passport = require("passport")
-//mongo connection ommited to use regular class setup
+const routes = require("./routes")
 const app = express()
+const public = express.static("public")
 
-const configRoutes = require("./routes")
+
 
 app.set("views", path.join(__dirname, "views"))
 app.engine("handlebars", handlebar({defaultLayout:"main"}))
 app.set("view engine", "handlebars")
 
+app.use("/static", public)
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cookieParser())
@@ -58,7 +60,7 @@ app.use(function (req, res, next) {
   next()
 })
 
-configRoutes(app)
+app.use("/", routes)
 
 app.listen(3000, () => {
   console.log("We've now got a server!")
