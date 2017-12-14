@@ -94,3 +94,14 @@ Custom Styles for Our Project
 footer {
     margin-top: 40px;
 }
+
+.nav > li > a {
+    padding-left: 3px;
+    padding-right: 2px;
+}
+
+.alert {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: medium;
+    color: #080808;
+}
