@@ -1,0 +1,38 @@
+<h2 class="page-header">Our Products Range</h2>
+{{#if errors}}
+  {{#each errors}}
+    <div class="alert alert-danger">{{msg}}</div>
+  {{/each}}
+{{/if}}
+<form method="get">
+  <div class="products-grid">
+    <div class="products-grid-row">
+      <div class="products-grid-cell">   
+        <img class="product" src="/static/images/product1_PhilipsSenseo.jpg" alt="Image unavailable">
+        <figcaption id="p1">Senseo 7810 Single-Serve Gourmet Coffee Machine</figcaption>
+      </div>
+      <div class="products-grid-cell">   
+        <img class="product" src="/static/images/product2_iRobotRoomba.jpg" alt="Image unavailable"/>
+        <figcaption id="p2">iRobot Roomba 890 Robot Vacuum with Wi-Fi Connectivity</figcaption>
+      </div>
+      <div class="products-grid-cell">   
+        <img class="product" src="/static/images/product3_DellXPS13.jpg" alt="Image unavailable"/>
+        <figcaption id="p3">Dell XPS9360-4841SLV 13.3" Laptop (7th Generation Intel Core i7, 8GB RAM, 256 GB SSD, Silver)</figcaption>
+      </div>
+    </div>
+    <div class="products-grid-row">
+      <div class="products-grid-cell">   
+        <img class="product" src="/static/images/product4_MarshallActon.jpg" alt="Image unavailable"/>
+        <figcaption id="p4">Marshall Acton M-ACCS-10126 Acton Speaker</figcaption>
+      </div>
+      <div class="products-grid-cell">   
+        <img class="product" src="/static/images/product5_WinixAirPurifier.jpg" alt="Image unavailable"/>
+        <figcaption id="p5">Winix 5300-2 Air Purifier with True HEPA</figcaption>
+      </div>
+      <div class="products-grid-cell">   
+        <img class="product" src="/static/images/product6_SamsungLEDMonitor.jpg" alt="Image unavailable"/>
+        <figcaption id="p6">Samsung S24E310HL 23.6-Inch Screen LED-Lit Monitor</figcaption>
+      </div>
+    </div>
+  </div>
+</form>
