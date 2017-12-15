@@ -32,16 +32,6 @@ body {
     border-top: .05rem solid #e5e5e5;
 }
 
-/* Customize container */
-@media (min-width: 48em) {
-    .container {
-        max-width: 46rem;
-    }
-}
-.container-narrow > hr {
-    margin: 2rem 0;
-}
-
 /* Main marketing message and sign up button */
 .jumbotron {
     text-align: center;
@@ -105,3 +95,34 @@ footer {
     font-size: medium;
     color: #080808;
 }
+
+.products-grid {
+    padding: 2px;
+    display: table;
+    margin: 2px;
+    width: 100%;
+}
+
+.products-grid-row {
+    padding: 1px;
+    display: table-row;
+} 
+
+.products-grid-cell {
+    display: table-cell;
+    width: 300px;
+    height: 300px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px dotted rgb(175, 167, 167);
+}
+.product {
+    display: table-cell;
+    width: 300px;
+    height: 300px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;}

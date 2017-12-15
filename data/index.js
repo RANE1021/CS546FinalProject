@@ -2,8 +2,10 @@ const bcrypt = require("bcryptjs")
 const id = require("uuid/v4")
 const db = require("../mongo/collections")
 const userDB = db.users
+const productsData = require("./products");
 
 const exportedMethods = {
+  products: productsData,
 
   async createNewUser(username, name, password, email) {
     const userCollection = await userDB()

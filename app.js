@@ -11,8 +11,6 @@ const routes = require("./routes")
 const app = express()
 const public = express.static("public")
 
-
-
 app.set("views", path.join(__dirname, "views"))
 app.engine("handlebars", handlebar({defaultLayout:"main"}))
 app.set("view engine", "handlebars")
