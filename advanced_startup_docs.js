@@ -19,7 +19,7 @@ function runSetup() {
         //     // We've either dropped it or it doesn't exist at all; either way, let's make 
         //     // a new version of the collection
         //     return db.createCollection("recipes");
-        // });
+        });
 }
 
 // By exporting a function, we can run 
