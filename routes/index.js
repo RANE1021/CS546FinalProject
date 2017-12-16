@@ -113,7 +113,7 @@ passport.deserializeUser(function (id, done) {
 
 router.post("/login",
   passport.authenticate("local", {
-    successRedirect: "/orders",
+    successRedirect: "/",
     failureRedirect:"/login",
     failureFlash: true
   }),
@@ -138,6 +138,12 @@ router.get("/cart", function (req, res) {
   res.render("cart")
 })
 
+router.get("/cart/productId", function (req, res)
+{
+	res.render("cart")
+})
+
+
 router.get("/checkout", function (req, res) {
   res.render("checkout")
 })
@@ -145,21 +151,50 @@ router.get("/checkout", function (req, res) {
 router.post("/checkout", function (req, res) {
   const userID = User.getUserId(callback())
 
-  //get products info function
-  const total = product.price * quantity
+  const name = req.body.name
+  const email = req.body.email
+  const address = req.body.address
+  const city = req.body.city
+  const state = req.body.state
+  const zip = req.body.zip
 
-  const newOrder = new Order({
-    price: total,
-    userid: userID,
-    paymentType: payment,
-    product: product.name,
-    quantity: quantity
-  })
+  req.checkBody("name", "Please type in a name").notEmpty()
+  req.checkBody("email", "Please type in an email").notEmpty()
+  req.checkBody("email", "Please provide a valid email").isEmail()
+  req.checkBody("address", "Please type in an address").notEmpty()
+  req.checkBody("city", "Please type in a city").notEmpty()
+  req.checkBody("zip", "Please type in an zipcode").notEmpty()
 
-  Order.createOrder(newOrder, function(err){
-    if(err) throw err
-  })
+  const errorMessages = req.validationErrors()
 
+  if (errorMessages) {
+    res.render("checkout", {
+      errors: errorMessages
+    })
+  }
+
+  if (errorMessages) {
+    res.render("register", {
+      errors: errorMessages
+    })
+}
+    else
+    {
+	  //get products info function
+	  const total = product.price * quantity
+
+	  const newOrder = new Order({
+	    price: total,
+	    userid: userID,
+	    paymentType: payment,
+	    product: product.name,
+	    quantity: quantity
+	  })
+
+	  Order.createOrder(newOrder, function(err){
+	    if(err) throw err
+	  })
+    }
 })
 
 router.get("/thankyou", function (req, res) {

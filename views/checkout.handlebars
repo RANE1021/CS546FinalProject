@@ -1,4 +1,9 @@
 <h2 class="page-header">Checkout</h2>
+{{#if errors}}
+  {{#each errors}}
+    <div class="alert alert-danger">{{message}}</div>
+  {{/each}}
+{{/if}}
 
 <h3>Checkout</h3>
 
