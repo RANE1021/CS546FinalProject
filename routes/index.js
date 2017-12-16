@@ -25,6 +25,14 @@ router.get("/product/:productId", function (req, res) {
   })
 })
 
+// CART - KARAN
+//router.get("/cart/:productId", function (req, res) {
+//  Product.getProductById(req.params.productId, function(err, product){
+//    if(err) throw err
+//    res.render("login", {product: product});
+//  })
+//})
+
 // Register
 router.get("/register", function (req, res) {
   res.render("register")
