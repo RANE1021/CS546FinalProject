@@ -4,22 +4,13 @@ const passport = require("passport")
 const LocalStrategy = require("passport-local").Strategy
 const User = require("../data/users")
 
-// Products - Home page and Product description page
+//index
 router.get("/", function (req, res) {
   res.render("home")
 })
 
 router.get("/home", function (req, res) {
   res.render("home")
-})
-
-router.post("/", function (req, res) {
-  console.log("\nPosting query ", req.body.searchQuery)
-  res.redirect("/product/"+ req.body.searchQuery)
-})
-
-router.get("/product/:searchQuery", function (req, res) {
-    res.render("product", {productName: req.params.searchQuery});
 })
 
 // Register
@@ -120,6 +111,14 @@ router.get("/logout", function (req, res) {
 
 router.get("/orders", function (req, res) {
   res.render("orders")
+})
+
+router.get("/cart", function (req, res) {
+  res.render("cart")
+})
+
+router.get("/checkout", function (req, res) {
+  res.render("checkout")
 })
 
 module.exports = router
