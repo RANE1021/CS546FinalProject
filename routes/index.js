@@ -25,20 +25,6 @@ router.get("/product/:productId", function (req, res) {
   })
 })
 
-//CART - KARAN
-router.get("/cart/:productId", function (req, res) {
- Product.getProductById(req.params.productId, function(err, product){
-   if(err) throw err
-   res.render("cart", {product: product});
- })
-})
-
-router.get("/checkout/:productId", function (req, res) {
- Product.getProductById(req.params.productId, function(err, product){
-   if(err) throw err
-   res.render("checkout", {product: product});
- })
-})
 
 router.get("/thankyou/:productId", function (req, res) {
  Product.getProductById(req.params.productId, function(err, product){
