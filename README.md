@@ -7,3 +7,7 @@ E-commerce website for a web programming class
 * Rafael Nunez
 * Karan Shah
 * Zhiqi Xiong
+
+*************************************************
+*npm install and update for mongoose
+*ensure mongoDB is running

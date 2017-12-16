@@ -138,6 +138,7 @@ router.get("/logout", function (req, res) {
 })
 
 router.get("/orders", function (req, res) {
+  // const orders = User.getOrders()
   res.render("orders")
 })
 

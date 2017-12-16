@@ -1,1 +1,6 @@
-Past Orders GO HERE
+<h2 class="page-header order-page">Your Past Orders</h2>
+{{#if errors}}
+  {{#each errors}}
+    <div class="alert alert-danger">{{msg}}</div>
+  {{/each}}
+{{/if}}
