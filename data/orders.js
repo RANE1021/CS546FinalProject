@@ -1,10 +1,10 @@
-var mongoose = require('mongoose')
+const mongoose = require('mongoose')
 
 var OrderSchema = mongoose.Schema({
   price: {
     type: Number
   },
-  date: {
+  userid: {
     type: String
   },
   paymentType: {
@@ -19,3 +19,8 @@ var OrderSchema = mongoose.Schema({
 })
 
 var Order = module.exports = mongoose.model("Order", OrderSchema, "orders")
+
+module.exports.createOrder = function(newOrder, callback){
+      newOrder.save(callback)
+}
+

@@ -3,6 +3,7 @@ const router = express.Router()
 const passport = require("passport")
 const LocalStrategy = require("passport-local").Strategy
 const User = require("../data/users")
+const Order = require("../data/orders")
 
 //index
 router.get("/", function (req, res) {
@@ -119,6 +120,26 @@ router.get("/cart", function (req, res) {
 
 router.get("/checkout", function (req, res) {
   res.render("checkout")
+})
+
+router.post("/checkout", function (req, res) {
+  const userID = User.getUserId(callback())
+
+  //get products info function
+  const total = product.price * quantity
+
+  const newOrder = new Order({
+    price: total,
+    userid: userID,
+    paymentType: payment,
+    product: product.name,
+    quantity: quantity
+  })
+
+  Order.createOrder(newOrder, function(err){
+    if(err) throw err
+  })
+
 })
 
 router.get("/thankyou", function (req, res) {
