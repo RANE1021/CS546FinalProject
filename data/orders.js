@@ -29,8 +29,11 @@ module.exports.getOrderByUserId = function(id, callback){
   Order.findOne(query, callback)
 }
 
-module.exports.getAllOrders = function(callback)
+module.exports.getAllOrders = function()
 {
-  Order.findAll(callback).toArray()
+  Order.find({}, function (error, orders) {
+    res.json(orders)
+  })
 }
+
 
