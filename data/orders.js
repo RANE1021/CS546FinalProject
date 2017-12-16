@@ -24,3 +24,13 @@ module.exports.createOrder = function(newOrder, callback){
       newOrder.save(callback)
 }
 
+module.exports.getOrderByUserId = function(id, callback){
+  const query = {userid: id}
+  Order.findOne(query, callback)
+}
+
+module.exports.getAllOrders = function(callback)
+{
+  Order.findAll(callback).toArray()
+}
+
