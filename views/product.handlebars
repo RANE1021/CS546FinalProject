@@ -4,15 +4,15 @@
     <div class="alert alert-danger">{{msg}}</div>
   {{/each}}
 {{/if}}
-<form id="productForm" name="productForm" method="get">
+<form id="productForm" name="productForm" method="get" action="/cart/{{product._id}}">
   <h2 class="page-header">Our Products Range</h2>
   <div class="products-grid">
     <div class="products-grid-row">
       <div class="products-grid-cell">   
         <img class="product" src="/static/images/{{product.image}}.jpg" alt="Image unavailable">
         <figcaption>{{product.title}}</figcaption>
-        <a href="/cart/{{product._id}}">BUY</a>
-        <!--<button onclick="location.href='/cart/'" id={{product._id}} type="submit-button">BUY</button>-->
+        <!--<a href="/cart/{{product._id}}">BUY</a>-->
+        <button id={{product._id}} type="submit">BUY</button>
       </div>
       <div class="products-grid-cell">   
         <ul id="productFeatures">
