@@ -5,14 +5,40 @@ const LocalStrategy = require("passport-local").Strategy
 const User = require("../data/users")
 const Order = require("../data/orders")
 
-//index
+// Products - Home page and Product description page
 router.get("/", function (req, res) {
-  res.render("home")
+  Product.getAllProducts(function(err, products){
+    if(err) throw err
+    res.render("home", {products: products})
+  })
 })
 
 router.get("/home", function (req, res) {
   res.render("home")
 })
+
+router.post("/", function (req, res) {
+  console.log("\nRedirecting to product info page for id: ", req.body.searchQuery)
+  res.redirect("/product/"+ req.body.searchQuery)
+})
+
+router.get("/product/:productId", function (req, res) {
+  Product.getProductById(req.params.productId, function(err, product){
+    if(err) throw err
+    res.render("product", {product: product});
+  })
+})
+
+router.post("/product/:productId", function (req, res) {
+  
+  //res.redirect("/cart")
+  console.log("\nPosting product id ", req.params.productId);
+  res.render("checkout", {productName: req.params.productId});
+})
+
+//router.post("/productCart", function (req, res) {
+//  res.render("product", {productName: req.params.searchQuery});
+//})
 
 // Register
 router.get("/register", function (req, res) {

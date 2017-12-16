@@ -11,8 +11,11 @@ const routes = require("./routes")
 const public = express.static("public")
 const db = require("mongodb")
 const mongoose = require("mongoose")
+const Product = require("./data/products")
 
+// connect to DB and initialize product inventory
 mongoose.connect("mongodb://localhost/eccomerce", {useMongoClient: true})
+Product.initInventory();
 
 const app = express()
 app.set("views", path.join(__dirname, "views"))

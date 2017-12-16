@@ -1,0 +1,86 @@
+[
+	{	
+		"image":"product1",
+		"title":"Senseo 7810 Single-Serve Gourmet Coffee Machine",
+		"description":"Coffee machine for a delicious brew",
+		"price":89.50,
+		"colors": ["black", "navy blue"],
+		"specifications": {
+			"dimensions": "10x5x3 cm",
+			"weight": "3.34 pounds",
+			"power": "1450W",
+			"input": "220V"
+		},
+		"reviews": []
+	},
+	{
+		"image":"product2",
+		"title":"iRobot Roomba 890 Robot Vacuum with Wi-Fi Connectivity",
+		"description":"Robot cleaner for your house that sweeps every corner. Plus, cats love it!",
+		"price":858.90,
+		"colors": ["black", "olive green"],
+		"specifications": {
+			"dimensions": "30 cm",
+			"weight": "2.50 pounds",
+			"power": "200W",
+			"input": "110V"
+		},
+		"reviews": []
+	},
+	{
+		"image":"product3",
+		"title":"Dell XPS9360-4841SLV 13.3 Laptop (7th Generation Intel Core i7, 8GB RAM, 256 GB SSD, Silver)",
+		"description":"The best of the XPS.",
+		"price":849.99,
+		"colors": ["black", "navy blue", "cloudy grey"],
+		"specifications": {
+			"dimensions": "13 in",
+			"weight": "5.14 pounds",
+			"power": "1800W",
+			"input": "110V"
+		},
+		"reviews": []
+	},
+	{
+		"image":"product4",
+		"title":"Marshall Acton M-ACCS-10126 Acton Speaker",
+		"description":"Amplifiers for the insatiable ear, now with bluetooth!",
+		"price":1875.50,
+		"colors": ["black"],
+		"specifications": {
+			"dimensions": "10x5x3 cm",
+			"weight": "8.34 pounds",
+			"power": "2500W",
+			"input": "110V"
+		},
+		"reviews": []
+	},
+	{
+		"image":"product5",
+		"title":"Winix 5300-2 Air Purifier with True HEPA",
+		"description":"Now stay away from dust and allergies with Winix's new air purifier. Fit for home and office",
+		"price":420.50,
+		"colors": ["black"],
+		"specifications": {
+			"dimensions": "10x5x3 cm",
+			"weight": "1.87 pounds",
+			"power": "500W",
+			"input": "110V"
+		},
+		"reviews": []
+	},
+	{
+		"image":"product6",
+		"title":"Samsung S24E310HL 23.6-Inch Screen LED-Lit Monitor",
+		"description":"Brighten up your living room with this high res LED monitor with TouchSense technology",
+		"price":1245.00,
+		"colors": ["black"],
+		"specifications": {
+			"dimensions": "23.6 in",
+			"weight": "5.43 pounds",
+			"power": "2000W",
+			"input": "110V"
+		},
+		"reviews": []
+	}
+]
