@@ -39,9 +39,9 @@ module.exports.initInventory = function(callback){
     Product.remove( function() {
         Product.insertMany(inventory, function(err,result) {
             if (err) {
-                //console.log("\nFailed to initialize products collection! \n", err)
+                // console.log("\nFailed to initialize products collection! \n", err)
             } else {
-                //console.log("\nInventory spawned!:\n")
+                // console.log("\nInventory spawned!:\n")
             }
         });
     }) 
@@ -54,7 +54,6 @@ module.exports.searchProductByTitle = function(title, callback){
   
 module.exports.getProductById = function(id, callback){
     var query = {_id: id}
-    console.log("\nInside getProductById. Searching for id: ", id);
     Product.findOne(query, callback);
 }
 
