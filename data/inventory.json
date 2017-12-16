@@ -9,7 +9,7 @@
 			"dimensions": "10x5x3 cm",
 			"weight": "3.34 pounds",
 			"power": "1450W",
-			"input": "220V"
+			"inputVoltage": "220V"
 		},
 		"reviews": []
 	},
@@ -23,7 +23,7 @@
 			"dimensions": "30 cm",
 			"weight": "2.50 pounds",
 			"power": "200W",
-			"input": "110V"
+			"inputVoltage": "110V"
 		},
 		"reviews": []
 	},
@@ -37,7 +37,7 @@
 			"dimensions": "13 in",
 			"weight": "5.14 pounds",
 			"power": "1800W",
-			"input": "110V"
+			"inputVoltage": "110V"
 		},
 		"reviews": []
 	},
@@ -51,7 +51,7 @@
 			"dimensions": "10x5x3 cm",
 			"weight": "8.34 pounds",
 			"power": "2500W",
-			"input": "110V"
+			"inputVoltage": "110V"
 		},
 		"reviews": []
 	},
@@ -65,7 +65,7 @@
 			"dimensions": "10x5x3 cm",
 			"weight": "1.87 pounds",
 			"power": "500W",
-			"input": "110V"
+			"inputVoltage": "110V"
 		},
 		"reviews": []
 	},
@@ -79,7 +79,7 @@
 			"dimensions": "23.6 in",
 			"weight": "5.43 pounds",
 			"power": "2000W",
-			"input": "110V"
+			"inputVoltage": "110V"
 		},
 		"reviews": []
 	}

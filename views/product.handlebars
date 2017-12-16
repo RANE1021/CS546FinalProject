@@ -1,25 +1,34 @@
-<h2 class="page-header">Our Products Range</h2>
+<h2 class="page-header">{{product.title}}</h2>
 {{#if errors}}
   {{#each errors}}
     <div class="alert alert-danger">{{msg}}</div>
   {{/each}}
 {{/if}}
 <form id="productForm" name="productForm" method="get" action="/cart/{{product._id}}">
-  <h2 class="page-header">Our Products Range</h2>
   <div class="products-grid">
     <div class="products-grid-row">
       <div class="products-grid-cell">   
         <img class="product" src="/static/images/{{product.image}}.jpg" alt="Image unavailable">
         <figcaption>{{product.title}}</figcaption>
-        <!--<a href="/cart/{{product._id}}">BUY</a>-->
-        <button id={{product._id}} type="submit">BUY</button>
+        <button id={{product._id}} style="background-color: #e9ab27; float:right;" type="submit">BUY</button>
       </div>
       <div class="products-grid-cell">   
-        <ul id="productFeatures">
-          <li>{{product.title}}</li>
-          <li>{{product.description}}</li>
-          <li>{{product.price}}</li>
-        </ul>
+        <dl>
+           <dt>Model</dt>
+           <dd>{{product.title}}</dd>
+           <dt>Description</dt>
+           <dd>{{product.description}}</dd>
+           <dt>Price</dt>
+           <dd>{{product.price}}</dd>
+           <dt>Dimensions</dt>
+           <dd>{{product.specifications.dimensions}}</dd>
+           <dt>Weight</dt>
+           <dd>{{product.specifications.weight}}</dd>
+           <dt>Power</dt>
+           <dd>{{product.specifications.power}}</dd>
+           <dt>Input Voltage</dt>
+           <dd>{{product.specifications.inputVoltage}}</dd>
+        </dl>
       </div>
     </div>
     <div class="comments-row">

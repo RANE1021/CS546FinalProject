@@ -110,14 +110,16 @@ footer {
 
 .products-grid-cell {
     display: table-cell;
+    vertical-align: top;
     width: 300px;
-    height: 300px;
+    height: 200px;
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
     border: 1px dotted rgb(175, 167, 167);
 }
+
 .product {
     display: table-cell;
     width: 300px;
