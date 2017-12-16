@@ -1,0 +1,19 @@
+<h2 class="page-header">Our Products Range</h2>
+{{#if errors}}
+  {{#each errors}}
+    <div class="alert alert-danger">{{msg}}</div>
+  {{/each}}
+{{/if}}
+<form id="productForm" name="productForm" action="/form/" method="post">
+  <div class="search-container">
+    <input type="text" placeholder="Search.." name="search">
+    <button id="searchButton" type="submit"><i class="fa fa-search"></i></button>
+  </div>  <div class="products-grid">
+    <div class="products-grid-row"> 
+      <div class="products-grid-cell">   
+        <img class="product" src="/static/images/{{productName}}.jpg" alt="Image unavailable">
+    <!--    <figcaption id="p1">Senseo 7810 Single-Serve Gourmet Coffee Machine</figcaption> -->
+      </div>
+    </div>
+  </div>
+</form>

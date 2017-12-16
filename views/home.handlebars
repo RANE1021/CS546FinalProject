@@ -1,37 +1,43 @@
-<h2 class="page-header">Our Products Range</h2>
 {{#if errors}}
   {{#each errors}}
     <div class="alert alert-danger">{{msg}}</div>
   {{/each}}
 {{/if}}
-<form method="get">
+<form id="homePage" method="get">
+  <div class="topnav">
+    <div class="search-container">
+      <input id="searchQuery" name="searchQuery" type="text" placeholder="Search..">
+      <button class="submit-button"><i class="fa fa-search"></i></button>
+    </div>
+  </div>  
+  <h2 class="page-header">Our Products Range</h2>
   <div class="products-grid">
     <div class="products-grid-row">
       <div class="products-grid-cell">   
-        <img class="product" src="/static/images/product1_PhilipsSenseo.jpg" alt="Image unavailable">
-        <figcaption id="p1">Senseo 7810 Single-Serve Gourmet Coffee Machine</figcaption>
+        <img class="product" src="/static/images/product1.jpg" alt="Image unavailable">
+        <a href="/product/product1">Senseo 7810 Single-Serve Gourmet Coffee Machine</a>
       </div>
       <div class="products-grid-cell">   
-        <img class="product" src="/static/images/product2_iRobotRoomba.jpg" alt="Image unavailable"/>
-        <figcaption id="p2">iRobot Roomba 890 Robot Vacuum with Wi-Fi Connectivity</figcaption>
+        <img class="product" src="/static/images/product2.jpg" alt="Image unavailable"/>
+        <a href="/product/product2">iRobot Roomba 890 Robot Vacuum with Wi-Fi Connectivity</a>
       </div>
       <div class="products-grid-cell">   
-        <img class="product" src="/static/images/product3_DellXPS13.jpg" alt="Image unavailable"/>
-        <figcaption id="p3">Dell XPS9360-4841SLV 13.3" Laptop (7th Generation Intel Core i7, 8GB RAM, 256 GB SSD, Silver)</figcaption>
+        <img class="product" src="/static/images/product3.jpg" alt="Image unavailable"/>
+        <a href="/product/product3">Dell XPS9360-4841SLV 13.3" Laptop (7th Generation Intel Core i7, 8GB RAM, 256 GB SSD, Silver)</a>
       </div>
     </div>
     <div class="products-grid-row">
       <div class="products-grid-cell">   
-        <img class="product" src="/static/images/product4_MarshallActon.jpg" alt="Image unavailable"/>
-        <figcaption id="p4">Marshall Acton M-ACCS-10126 Acton Speaker</figcaption>
+        <img class="product" src="/static/images/product4.jpg" alt="Image unavailable"/>
+        <a href="/product/product4">Marshall Acton M-ACCS-10126 Acton Speaker</a>
       </div>
       <div class="products-grid-cell">   
-        <img class="product" src="/static/images/product5_WinixAirPurifier.jpg" alt="Image unavailable"/>
-        <figcaption id="p5">Winix 5300-2 Air Purifier with True HEPA</figcaption>
+        <img class="product" src="/static/images/product5.jpg" alt="Image unavailable"/>
+        <a href="/product/product5">Winix 5300-2 Air Purifier with True HEPA</a>
       </div>
       <div class="products-grid-cell">   
-        <img class="product" src="/static/images/product6_SamsungLEDMonitor.jpg" alt="Image unavailable"/>
-        <figcaption id="p6">Samsung S24E310HL 23.6-Inch Screen LED-Lit Monitor</figcaption>
+        <img class="product" src="/static/images/product6.jpg" alt="Image unavailable"/>
+        <a href="/product/product6">Samsung S24E310HL 23.6-Inch Screen LED-Lit Monitor</a>
       </div>
     </div>
   </div>
