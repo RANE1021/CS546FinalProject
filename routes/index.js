@@ -121,4 +121,8 @@ router.get("/checkout", function (req, res) {
   res.render("checkout")
 })
 
+router.get("/thankyou", function (req, res) {
+  res.render("thankyou")
+})
+
 module.exports = router
