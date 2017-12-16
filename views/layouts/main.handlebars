@@ -11,11 +11,15 @@
   <div class="header clearfix">
     <nav>
       <ul class="nav nav-pills pull-right">
-        <li role="presentation"><a href="/">Home</a></li>
-        <li role="presentation"><a href="/login">Login</a></li>
-        <li role="presentation"><a href="/register">Register</a></li>
-        <li role="presentation"><a href="/orders">Orders</a></li>
+        {{#if user}}
+          <li role="presentation"><a href="/">Home</a></li>
+          <li role="presentation"><a href="/orders">Orders</a></li>
           <li role="presentation"><a href="/cart"><img class="navigation" src="/static/images/shopping-cart.png"> Cart</a></li>
+          <li role="presentation"><a href="/logout">Logout</a></li>
+        {{else}}
+          <li role="presentation"><a href="/login">Login</a></li>
+          <li role="presentation"><a href="/register">Register</a></li>
+        {{/if}}
       </ul>
     </nav>
     <h3 class="text-muted">E-Commerce</h3>

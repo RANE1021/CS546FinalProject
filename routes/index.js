@@ -2,7 +2,7 @@ const express = require("express")
 const router = express.Router()
 const passport = require("passport")
 const LocalStrategy = require("passport-local").Strategy
-const customer = require("../data")
+const User = require("../data/users")
 
 //index
 router.get("/", function (req, res) {
@@ -25,7 +25,7 @@ router.post("/register", function (req, res) {
   const password = req.body.password
   const passwordMatch = req.body.passwordMatch
 
-  req.checkBody('name', "Please type in a name").notEmpty()
+  req.checkBody("name", "Please type in a name").notEmpty()
   req.checkBody("username", "Please type in a username").notEmpty()
   req.checkBody("email", "Please type in an email").notEmpty()
   req.checkBody("email", "Please provide a valid email").isEmail()
@@ -39,19 +39,19 @@ router.post("/register", function (req, res) {
       errors: errorMessages
     })
   } else {
-    const registerUser = {
-      username: username,
+    const newUser = new User({
       name: name,
-      email: email,
+      email:email,
+      username: username,
       password: password
-    }
-
-    customer.createNewUser(registerUser, function (error, newUser) {
-      if (error) throw error
-      console.log(newUser)
     })
 
-    req.flash("success_message", "YAY")
+    User.createUser(newUser, function(err, user){
+      if(err) throw err
+      console.log(user)
+    })
+
+    req.flash("success_msg", "You are registered and can now login")
 
     res.redirect("/login")
   }
@@ -63,51 +63,54 @@ router.get("/login", function (req, res) {
 })
 
 passport.use(new LocalStrategy(
-  function (username, password, done) {
-    customer.getUserByUsername(username, function (error, user) {
-      if (error) throw error
-      if (!user)
-        return done(null, false, {message: "User Not Found"})
+  function(username, password, done) {
+    User.getUserByUsername(username, function(err, user){
+      if(err) throw err
+      if(!user){
+        return done(null, false, {message: "Unknown User"})
+      }
 
-      customer.passwordMatch(password, customer.password, function (error, match) {
-        if (error) throw error
-        if (match)
+      User.comparePassword(password, user.password, function(err, isMatch){
+        if(err) throw err
+        if(isMatch){
           return done(null, user)
-        else
+        } else {
           return done(null, false, {message: "Invalid password"})
+        }
       })
     })
-  }
-))
+  }))
 
 passport.serializeUser(function (user, done) {
   done(null, user.id)
 })
 
 passport.deserializeUser(function (id, done) {
-  customer.getUserById(id, function (error, user) {
+  User.getUserById(id, function (error, user) {
     done(error, user)
   })
 })
 
 router.post("/login",
   passport.authenticate("local", {
-    successRedirect: "/",
+    successRedirect: "/orders",
     failureRedirect:"/login",
     failureFlash: true
   }),
   function (req, res) {
-    res.redirect("/")
+    res.redirect("/orders")
+})
+
+router.get("/logout", function (req, res) {
+  req.logout()
+
+  req.flash("success_message", "Logged out")
+
+  res.redirect("/login")
 })
 
 router.get("/orders", function (req, res) {
   res.render("orders")
 })
-
-
-
-// router.get("/:userId")
-  // End Users
-
 
 module.exports = router
