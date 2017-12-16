@@ -4,6 +4,7 @@ const passport = require("passport")
 const LocalStrategy = require("passport-local").Strategy
 const User = require("../data/users")
 const Order = require("../data/orders")
+const Product = require("../data/products")
 
 // Products - Home page and Product description page
 router.get("/", function (req, res) {
