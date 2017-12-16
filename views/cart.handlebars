@@ -1,25 +1,21 @@
 <h2 class="page-header">Welcome to Your Cart!</h2>
 
-Product Name:
-<br>
-<br>
-
-Product Image:
-<br>
+<h4>Product Name</h4>
 <br>
 
-Product Price:
-<br><br>
+<h4>Image will go here</h4>
+<br>
 
-<form action="/checkout">
-    <input type="submit" value="Buy Now">
-    Quantity: <input type="number" name="quantity" min="1" max="5" step="1" value="1">
+<form action="/checkout" class="Cart">
+    <p class="quantity">Quantity: <input type="number" name="quantity" min="1" max="5" step="1" value="1" class="quantity"></p>
+    <p class="cost">Total Cost:</p>
+    <input type="submit" value="Checkout" class="checkoutButton">
 </form>
 
 <br>
-
-<form action="/">
-    <input type="submit" value="Remove Item" onclick="delete">
+<br>
+<form action="/" class="removeItems">
+    <input type="submit" value="Remove Item" onclick="delete" class="removeItemButton">
 </form>
 
 
