@@ -25,8 +25,6 @@ router.get("/product/:productId", function (req, res) {
   })
 })
 
-
-//CART - KARAN
 router.get("/cart/:productId", function (req, res) {
  Product.getProductById(req.params.productId, function(err, product){
    if(err) throw err
@@ -55,8 +53,6 @@ router.get("/orders/:productId", function (req, res) {
    res.render("orders", {product: product});
  })
 })
-
-
 
 router.get("/product/?searchQuery", function (req, res) {
   console.log("\nSearch query: ", request.params.searchQuery)

@@ -1,3 +1,18 @@
+<script> 
+  function addNewReview()
+    {
+      // hide "no reviews" alert
+      document.getElementById('reviews-error').style.visibility = "hidden";
+      
+      // append new review
+      var history = document.getElementById("reviews");
+      var newItem = document.createElement("li");
+      var newItemValue = document.createTextNode(document.getElementById("addReview").value);
+      newItem.appendChild(newItemValue);
+      history.appendChild(newItem);
+    }
+</script>
+
 <h2 class="page-header">{{product.title}}</h2>
 {{#if errors}}
   {{#each errors}}
@@ -32,20 +47,17 @@
       </div>
     </div>
     <div>
-      <div class="search-container">
-        <input id="addReview" name="addReview" type="text" placeholder="Add review.." style="margin-top: 30px; margin-top: 30px; width: 600px;">
-        <button onclick="submitReview" class="submit-button">Submit</button>
+      <div>
+        <textarea id="addReview" name="addReview" type="text" placeholder="Add review.." style="margin-top: 30px; margin-bottom: 5px; width: 100%;"></textarea>
+        <button onclick="addNewReview()" type="button" class="submit-button">Submit</button>
       </div>
     </div>
     <div class="products-grid-row">
-      {{#if product.reviews}}
-        {{#each errors}}
-          <label>Reviews present</label>
-        {{/each}}
-      {{/if}}      
-      <label>This product has no reviews. How about add a review?</label>
+      <label id="reviews-error">This product has no reviews. How about add a review?</label>
     </div>
-    <div class="comments-row">
+    <div>
+      <!-- cite: https://stackoverflow.com/a/5482693/2535979 -->
+      <ul id="reviews" style:"float: left;"></ul>
     </div>
   </div>
 </form>
