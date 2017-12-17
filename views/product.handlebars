@@ -31,6 +31,20 @@
         </dl>
       </div>
     </div>
+    <div>
+      <div class="search-container">
+        <input id="addReview" name="addReview" type="text" placeholder="Add review.." style="margin-top: 30px; margin-top: 30px; width: 600px;">
+        <button onclick="submitReview" class="submit-button">Submit</button>
+      </div>
+    </div>
+    <div class="products-grid-row">
+      {{#if product.reviews}}
+        {{#each errors}}
+          <label>Reviews present</label>
+        {{/each}}
+      {{/if}}      
+      <label>This product has no reviews. How about add a review?</label>
+    </div>
     <div class="comments-row">
     </div>
   </div>
