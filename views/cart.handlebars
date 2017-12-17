@@ -1,23 +1,29 @@
 <h2 class="page-header">Welcome to Your Cart!</h2>
-
-<h4>Product Name</h4>
+<br>
+<h2>{{product.title}}</h2>
+<img class="product" src="/static/images/{{product.image}}.jpg" alt="Image unavailable">
 <br>
 
-<h4>Image will go here</h4>
-<br>
-
-<p class="cost" id="totalCost">Total Cost: $300</p>
-<form action="/checkout" class="Cart">
-    <p class="quantity">Quantity: <input type="number" name="quantity" min="1" max="5" step="1" value="1" class="quantity"></p>
+<form action="/checkout/{{productId}}" class="Cart">
+    <p class="quantity">Quantity: <input type="number" name="quantity" min="1" max="5" step="1" value="1" class="quantity" id="quantity" onchange="totalCost()" ></p>
+    <p class="cost" name="totalCost" id="totalCost">Total Cost: ${{product.price}}</p>
     <input type="submit" value="Checkout" class="checkoutButton">
 </form>
 
 <br>
 <br>
-<form action="/" class="removeItems">
-    <input type="submit" value="Remove Item" onclick="delete" class="removeItemButton">
+<form action="/cart" class="removeItems">
+    <input type="submit" value="Remove Item" class="removeItemButton" onclick="removeItems()">
 </form>
 
-
+<script>
+    function totalCost()
+    {
+        var quantity = document.getElementById("quantity").value;
+        var price = {{product.price}};
+        var cost = quantity * price;
+        document.getElementById("totalCost").innerHTML = "Total Cost: $" + cost;
+    }
+</script>
 
 

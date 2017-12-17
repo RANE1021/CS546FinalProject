@@ -5,35 +5,33 @@
   {{/each}}
 {{/if}}
 
-<h3>Checkout</h3>
-
-<form action=" /thankyou">
+<form action=" /thankyou/{{productId}}">
     Name: 
-    <br><input type="text" name="firstName" placeholder="Enter First and Last Name"> <br>
+    <br><input type="text" name="firstName" placeholder="Enter First and Last Name" required="true"> <br>
     <br>
 
     Email: 
-    <br><input type="email" name="email"> <br>
+    <br><input type="email" name="email" required="true"> <br>
     <br>
     
    Address:
-    <br><input type="text" name="address1"> <br>
+    <br><input type="text" name="address1" required="true"> <br>
     <br>
     
     City: 
-    <br><input type="text" name="city"> <br>
+    <br><input type="text" name="city" required="true"> <br>
     <br>
     
     State: 
-    <br><input type="text" name="state" placeholder="Enter State Initials">
+    <br><input type="text" name="state" placeholder="Enter State Initials" required="true">
     <br>
     <br>
     Zipcode: 
-    <br><input type="number" name="zip" > <br>
+    <br><input type="number" name="zip" required="true"> <br>
     <br>
     
     Payment Type:
-    <input type="radio" name="payment" value="cash" checked="checked"> Cash on 
+    <input type="radio" name="payment" value="cash" checked="checked" required="true"> Cash on 
     Delivery <br>
     <br>
     <input type="submit" value="Complete Order">
